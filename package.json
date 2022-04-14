@@ -1,6 +1,6 @@
 {
   "name": "@edsardio/alpine-tour",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A dynamic tour using AlpineJS and TailwindCSS",
   "main": "dist/module.cjs.js",
   "module": "dist/module.esm.js",

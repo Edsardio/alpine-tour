@@ -2,7 +2,7 @@
 function src_default(Alpine) {
   document.addEventListener("alpine:init", () => {
     let body = document.querySelector("body");
-    body.innerHTML = `<div style="display: none;" x-bind:class="$store.tour.active ? '' : 'hidden'" class="absolute z-10 inset-0" aria-labelledby="modal-title" role="dialog" aria-modal="true" x-show="$store.tour.active">
+    body.innerHTML = `<div style="display: none;" x-bind:class="$store.tour.active ? '' : 'hidden'" class="absolute z-10 inset-0" aria-labelledby="modal-title" role="dialog" aria-modal="true" x-show="$store.tour.active" x-data>
                       <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"
                           x-transition:enter="ease-out duration-300"
                           x-transition:enter-start="opacity-0"
