@@ -15,7 +15,7 @@ __export(exports, {
 function src_default(Alpine) {
   document.addEventListener("alpine:init", () => {
     let body = document.querySelector("body");
-    body.innerHTML = `<div style="display: none;" x-bind:class="$store.tour.active ? '' : 'hidden'" class="absolute z-10 inset-0" aria-labelledby="modal-title" role="dialog" aria-modal="true" x-show="$store.tour.active" x-data>
+    body.insertAdjacentHTML("afterbegin", `<div style="display: none;" x-bind:class="$store.tour.active ? '' : 'hidden'" class="absolute z-10 inset-0" aria-labelledby="modal-title" role="dialog" aria-modal="true" x-show="$store.tour.active" x-data>
                       <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"
                           x-transition:enter="ease-out duration-300"
                           x-transition:enter-start="opacity-0"
@@ -39,9 +39,6 @@ function src_default(Alpine) {
                             </div>
                             <div x-show="$store.tour.activeStep?.modifier === 'bottom'" class="w-6 overflow-hidden inline-block absolute" style="top: -1rem; left: 50%; transform: translateX(-50%)">
                              <div class=" h-4 w-4 bg-white rotate-45 transform origin-bottom-left"></div>
-                            </div>
-                            <div x-show="$store.tour.activeStep?.modifier === 'top'" class="w-6 overflow-hidden inline-block absolute" style="bottom: -1rem; left: 50%; transform: translateX(-50%)">
-                             <div class=" h-4 w-4 bg-white -rotate-45 transform origin-top-left"></div>
                             </div>
                             <div x-show="$store.tour.activeStep?.modifier === 'right'" class="w-4 overflow-hidden inline-block absolute" style="left: -1rem; top: 50%; transform: translateY(-50%)">
                              <div class=" h-6 bg-white -rotate-45 transform origin-top-right"></div>
@@ -75,7 +72,7 @@ function src_default(Alpine) {
                       </div>
                       </div>
                   </div>
-        ` + body.innerHTML;
+        `);
     document.addEventListener("keyup", (e) => {
       const tour = Alpine.store("tour");
       if (tour.active) {
